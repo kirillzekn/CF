@@ -1,0 +1,25 @@
+---
+Resources:
+  Ec2SecGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Demo Ec2 Sec group 
+      GroupName: Deco-group
+      SecurityGroupEgress:
+        - IpProtocol: tcp 
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+
+      SecurityGroupIngress:
+        - IpProtocol: tcp 
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+      VpcId: vpc-0ffb4f65
+Outputs:
+  MyDemoSecGroup:
+    Description: My Demo group 
+    Value: !Ref Ec2SecGroup 
+    Export: 
+      Name: HttpSecurityGroup

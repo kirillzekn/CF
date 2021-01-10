@@ -1,0 +1,9 @@
+---
+Resources:
+  myEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-03c3a7e4263fd998c
+      InstanceType: t2.micro
+      SecurityGroupIds:
+        - !ImportValue HttpSecurityGroup
