@@ -1,12 +1,13 @@
 ---
-Parameter:
-  S3-Bucket-Name:
+Parameters:
+  S3BucketName:
     Type: String
     Description: "Enter Bucket Name"
-  S3-AccessControl:
+  S3AccessControl:
     Type: String
     Default: Private
     AllowedValues:
+      - Private
       - PublicRead
       - PublicReadWrite
       - AuthenticatedRead
@@ -15,8 +16,8 @@ Resources:
     MyS3Bucket:
       Type: AWS::S3::Bucket
       Properties:
-        AccessControl: PublicRead
-        BucketName: "zekn-cf-s3-bucket"
+        AccessControl: !Ref S3AccessControl
+        BucketName: !Ref S3BucketName
       #   CorsConfiguration: 
       #   LifecycleConfiguration: 
       #   NotificationConfiguration: 
