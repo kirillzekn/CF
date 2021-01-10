@@ -4,7 +4,7 @@ Resources:
       Type: AWS::S3::Bucket
       Properties:
         AccessControl: PublicRead
-        BucketName: "ZEKN-CF-S3-Bucket"
+        BucketName: "zekn-cf-s3-bucket"
       #   CorsConfiguration: 
       #   LifecycleConfiguration: 
       #   NotificationConfiguration: 
