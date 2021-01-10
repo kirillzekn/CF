@@ -1,4 +1,16 @@
 ---
+Parameter:
+  S3-Bucket-Name:
+    Type: String
+    Description: "Enter Bucket Name"
+  S3-AccessControl:
+    Type: String
+    Default: Private
+    AllowedValues:
+      - PublicRead
+      - PublicReadWrite
+      - AuthenticatedRead
+
 Resources:
     MyS3Bucket:
       Type: AWS::S3::Bucket
