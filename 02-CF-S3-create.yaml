@@ -2,8 +2,8 @@
 Resources:
     MyS3Bucket:
       Type: AWS::S3::Bucket
-      # Properties: 
-      #   AccessControl: Private | PublicRead | PublicReadWrite | AuthenticatedRead | LogDeliveryWrite | BucketOwnerRead | BucketOwnerFullControl
+      Properties:
+        AccessControl: PublicRead
       #   BucketName: 
       #   CorsConfiguration: 
       #   LifecycleConfiguration: 
