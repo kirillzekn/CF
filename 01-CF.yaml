@@ -1,0 +1,20 @@
+---
+  course: "AWS LAMBDA"
+  instructor: "Stephane Maarek"
+  instructor-full:
+    first-name: "Stephane"
+    last-name: "Maarek"
+    awesomeness-level: 9000
+
+  sections-list:
+    - "introduction"
+    - "deploying your first function"
+    - "learning aws lambda in depth"
+    - "real world examples"
+  lectures:
+    - lecture-id: 1
+      lecture-name: "intro"
+      lecture-length: "5:03"
+    - lecture-id: 2
+      lecture-name: "aws lambda"
+      lecture-length: "10:47"

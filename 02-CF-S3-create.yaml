@@ -1,0 +1,15 @@
+---
+Resources:
+    MyS3Bucket:
+      Type: AWS::S3::Bucket
+      # Properties: 
+      #   AccessControl: Private | PublicRead | PublicReadWrite | AuthenticatedRead | LogDeliveryWrite | BucketOwnerRead | BucketOwnerFullControl
+      #   BucketName: 
+      #   CorsConfiguration: 
+      #   LifecycleConfiguration: 
+      #   NotificationConfiguration: 
+      #   VersioningConfiguration: 
+      #   WebsiteConfiguration: 
+      #   Tags:
+      #     - Key: key
+      #       Value: value"
