@@ -1,0 +1,46 @@
+---
+Mappings:
+  AMIimage:
+    us-west-1:
+      AMI: ami-009b16df9fcaac611
+    eu-central-1:
+      AMI: ami-03c3a7e4263fd998c
+
+Parameters:
+  Env:
+    Description: Environment type  
+    Type: String
+    Default: test
+    AllowedValues:
+      - test
+      - prod
+
+Conditions:
+  CreateProdResource: !Equals [!Ref Env, prod]
+
+Resources:
+  myEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !FindInMap [AMIimage, !Ref "AWS::Region", AMI] 
+      InstanceType: t2.micro
+  
+  MountPoint:
+    Type: AWS::EC2::VolumeAttachment
+    Condition: CreateProdResource
+    Properties:
+      Device: /dev/sdh
+      InstanceId: !Ref myEC2Instance
+      VolumeId: !Ref NewVolume
+  
+  NewVolume:
+    Type: AWS::EC2::Volume
+    Condition: CreateProdResource
+    Properties:
+      AvailabilityZone: !GetAtt myEC2Instance.AvailabilityZone
+      Size: 100
+
+Outputs:
+  VolumeId:
+    Condition: CreateProdResource
+    Value: !Ref NewVolume
